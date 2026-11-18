@@ -1,0 +1,15 @@
+{
+  "name": "AC ELWA 2",
+  "setup": {
+    "bstmode": {
+      "name": "Boost Mode",
+      "options": {
+        "0": "Off",
+        "1": "On",
+        "4": "SELV-Relais",
+        "5": "AUX-Relais"
+      },
+      "type": "enumeration"
+    }
+  }
+}

@@ -1,0 +1,92 @@
+{
+  "data": {
+    "upd_pct": {
+      "name": "Update Percentage",
+      "type": "number",
+      "unit": "%"
+    }
+  },
+  "setup": {
+    "rh1_target": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 1 target temperature",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh1_daybst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 1 day boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh1_nigbst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 1 night boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh2_target": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 2 target temperature",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh2_daybst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 2 day boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh2_nigbst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 2 night boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh3_target": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 3 target temperature",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh3_daybst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 3 day boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    },
+    "rh3_nigbst": {
+      "divider": 10,
+      "max": 65,
+      "min": 10,
+      "name": "Space heating 3 night boost",
+      "step": 0.1,
+      "type": "number",
+      "unit": "°C"
+    }
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "ELWA",
+  "data": {
+    "power": {
+      "name": "Heating power",
+      "type": "number",
+      "unit": "W"
+    },
+    "power_solar_act": {
+      "name": "PV power",
+      "type": "number",
+      "unit": "W"
+    },
+    "power_grid_act": {
+      "name": "Grid power",
+      "type": "number",
+      "unit": "W"
+    },
+    "volt_solar": {
+      "divider": 1000,
+      "name": "PV voltage",
+      "type": "number",
+      "unit": "V"
+    }
+  }
+}

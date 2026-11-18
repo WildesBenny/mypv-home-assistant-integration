@@ -1,0 +1,551 @@
+{
+  "title": "myPV (Personalizado)",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Dispositivo my-PV",
+        "description": "Introduce la dirección IP o el nombre de host de tu dispositivo my-PV. El dispositivo se usa completamente de forma local.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "La dirección IP o el nombre de host de tu dispositivo my-PV."
+        }
+      },
+      "auth": {
+        "title": "{name} contraseña",
+        "data": {
+          "password": "Contraseña"
+        },
+        "data_description": {
+          "password": "La contraseña de tu dispositivo my-PV. Si no hay una contraseña personalizada, usa la clave del dispositivo, que se encuentra en el menú de información del dispositivo (o en la etiqueta del HEA•THOR IoT)."
+        }
+      },
+      "discovery_confirm": {
+        "title": "{name}",
+        "description": "¿Quieres configurar {name}?"
+      },
+      "discovery_auth": {
+        "title": "{name}",
+        "description": "¿Quieres configurar {name}?",
+        "data": {
+          "password": "Contraseña"
+        },
+        "data_description": {
+          "password": "La contraseña de tu dispositivo my-PV. Si no hay una contraseña personalizada, usa la clave del dispositivo, que se encuentra en el menú de información del dispositivo (o en la etiqueta del HEA•THOR IoT)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "{name} contraseña",
+        "description": "La contraseña de tu dispositivo my-PV ha cambiado. Introduce la nueva contraseña.",
+        "data": {
+          "password": "Contraseña"
+        },
+        "data_description": {
+          "password": "La contraseña de tu dispositivo my-PV. Si no hay una contraseña personalizada, usa la clave del dispositivo, que se encuentra en el menú de información del dispositivo (o en la etiqueta del HEA•THOR IoT)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "No se pudo conectar",
+      "invalid_password": "Contraseña no válida"
+    },
+    "abort": {
+      "already_configured": "Este dispositivo ya está configurado",
+      "cannot_connect": "No se pudo conectar",
+      "unsupported_device": "Este dispositivo my-PV no es compatible",
+      "reauth_successful": "La reautenticación se realizó correctamente"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opciones de my-PV",
+        "data": {
+          "advanced": "Mostrar ajustes avanzados"
+        },
+        "data_description": {
+          "advanced": "Mostrar ajustes avanzados como la configuración de red, los horarios de boost y el diagnóstico."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "auth_error": {
+      "message": "Error de autenticación, vuelve a autenticarte."
+    },
+    "cannot_connect": {
+      "message": "No se pudo conectar con el dispositivo."
+    },
+    "device_unavailable": {
+      "message": "El dispositivo en {uri} no está disponible"
+    },
+    "fetch_failed": {
+      "message": "No se pudieron obtener datos del dispositivo."
+    },
+    "rate_limiting": {
+      "message": "El dispositivo recibe demasiadas solicitudes."
+    },
+    "unknown_error": {
+      "message": "El dispositivo no pudo completar la acción solicitada."
+    },
+    "unsupported_device": {
+      "message": "Este dispositivo my-PV no es compatible."
+    }
+  },
+  "entity": {
+    "switch": {
+      "bstmode": {
+        "name": "Modo boost"
+      },
+      "bstwd1": {
+        "name": "Boost lunes"
+      },
+      "bstwd2": {
+        "name": "Boost martes"
+      },
+      "bstwd3": {
+        "name": "Boost miércoles"
+      },
+      "bstwd4": {
+        "name": "Boost jueves"
+      },
+      "bstwd5": {
+        "name": "Boost viernes"
+      },
+      "bstwd6": {
+        "name": "Boost sábado"
+      },
+      "bstwd7": {
+        "name": "Boost domingo"
+      },
+      "cloudmode": {
+        "name": "Modo nube"
+      },
+      "debugmode": {
+        "name": "Modo de depuración"
+      },
+      "devmode": {
+        "name": "Modo del dispositivo"
+      },
+      "dhcp": {
+        "name": "Modo DHCP"
+      },
+      "legmode": {
+        "name": "Modo legionela"
+      },
+      "boostactive": {
+        "name": "Boost activo"
+      },
+      "bststrt": {
+        "name": "Boost manual"
+      },
+      "mm1relaux": {
+        "name": "Relé AUX al calentar"
+      }
+    },
+    "select": {
+      "bstmode": {
+        "name": "Modo boost",
+        "state": {
+          "0": "Desactivado",
+          "1": "Activado",
+          "3": "Relé",
+          "4": "Relé SELV",
+          "5": "Relé AUX"
+        }
+      },
+      "mainmode": {
+        "name": "Modo principal",
+        "state": {
+          "1": "Agua caliente 3,5 kW",
+          "3": "Agua caliente 3,5 + 3 kW"
+        }
+      },
+      "compmode": {
+        "name": "Modo de compatibilidad",
+        "state": {
+          "0": "AC ELWA 2 3,5 kW",
+          "1": "Emulación AC ELWA-E 3,5 kW",
+          "2": "Emulación AC ELWA-E 3 kW",
+          "3": "AC ELWA 2 3 kW"
+        }
+      },
+      "bstoutput": {
+        "name": "Salida boost",
+        "state": {
+          "7": "1, 2 y 3",
+          "6": "2 y 3",
+          "4": "3"
+        }
+      },
+      "legoutput": {
+        "name": "Salida legionela",
+        "state": {
+          "7": "1, 2 y 3",
+          "6": "1, 2 y 3",
+          "4": "3"
+        }
+      },
+      "mode9s": {
+        "name": "Modo de carga",
+        "state": {
+          "1": "Salida 1-2-3",
+          "2": "Salida 3-2-1"
+        }
+      }
+    },
+    "number": {
+      "bsttof1": {
+        "name": "Hora de apagado boost 1"
+      },
+      "bsttof2": {
+        "name": "Hora de apagado boost 2"
+      },
+      "bstton1": {
+        "name": "Hora de encendido boost 1"
+      },
+      "bstton2": {
+        "name": "Hora de encendido boost 2"
+      },
+      "legint": {
+        "name": "Intervalo legionela"
+      },
+      "legtemp": {
+        "name": "Temperatura legionela"
+      },
+      "legton": {
+        "name": "Hora de inicio legionela"
+      },
+      "maxpwr": {
+        "name": "Potencia máxima"
+      },
+      "ww1boost": {
+        "name": "Temperatura objetivo boost"
+      },
+      "ww1target": {
+        "name": "Temperatura objetivo"
+      },
+      "ww_boost_h": {
+        "name": "Histeresis mínima"
+      },
+      "ww_targ_h": {
+        "name": "Histeresis máxima"
+      },
+      "rh1_target": {
+        "name": "Calefacción 1 temperatura objetivo"
+      },
+      "rh1_daybst": {
+        "name": "Calefacción 1 boost diurno"
+      },
+      "rh1_nigbst": {
+        "name": "Calefacción 1 boost nocturno"
+      },
+      "rh2_target": {
+        "name": "Calefacción 2 temperatura objetivo"
+      },
+      "rh2_daybst": {
+        "name": "Calefacción 2 boost diurno"
+      },
+      "rh2_nigbst": {
+        "name": "Calefacción 2 boost nocturno"
+      },
+      "rh3_target": {
+        "name": "Calefacción 3 temperatura objetivo"
+      },
+      "rh3_daybst": {
+        "name": "Calefacción 3 boost diurno"
+      },
+      "rh3_nigbst": {
+        "name": "Calefacción 3 boost nocturno"
+      },
+      "mm1relauxpmin": {
+        "name": "Potencia mínima relé AUX"
+      },
+      "mm1relauxtmin": {
+        "name": "Tiempo mínimo relé AUX"
+      },
+      "ptarget": {
+        "name": "Potencia objetivo"
+      },
+      "blockon": {
+        "name": "Hora de inicio de bloqueo"
+      },
+      "blockof": {
+        "name": "Hora de fin de bloqueo"
+      },
+      "ct": {
+        "name": "Relación de pinza CT"
+      }
+    },
+    "sensor": {
+      "cloudserver": {
+        "name": "Número de servidor en la nube"
+      },
+      "macadr": {
+        "name": "Dirección MAC"
+      },
+      "serialno": {
+        "name": "Número de serie"
+      },
+      "coversion": {
+        "name": "Versión del co-controlador"
+      },
+      "ctrlstate": {
+        "name": "Estado del control"
+      },
+      "cur_eth_mode": {
+        "name": "Modo de red",
+        "state": {
+          "0": "LAN",
+          "1": "Wi-Fi",
+          "2": "Punto de acceso"
+        }
+      },
+      "curr_l1": {
+        "name": "Corriente L1"
+      },
+      "curr_l2": {
+        "name": "Corriente L2"
+      },
+      "curr_l3": {
+        "name": "Corriente L3"
+      },
+      "curr_mains": {
+        "name": "Corriente de red"
+      },
+      "device": {
+        "name": "Tipo de dispositivo"
+      },
+      "freq": {
+        "name": "Frecuencia de red"
+      },
+      "fwversion": {
+        "name": "Versión de firmware"
+      },
+      "fwversionlatest": {
+        "name": "Último firmware"
+      },
+      "psversion": {
+        "name": "Versión de la etapa de potencia"
+      },
+      "screen_mode_flag": {
+        "name": "Estado del dispositivo",
+        "state": {
+          "0": "En espera",
+          "1": "Calentar",
+          "2": "Boost",
+          "3": "Calefacción finalizada",
+          "4": "Sin conexión / Desactivado",
+          "5": "Error",
+          "6": "Bloqueo activo"
+        }
+      },
+      "soc": {
+        "name": "Estado de carga del acumulador"
+      },
+      "surplus": {
+        "name": "Potencia de red"
+      },
+      "temp1": {
+        "name": "Temperatura 1"
+      },
+      "temp2": {
+        "name": "Temperatura 2"
+      },
+      "temp3": {
+        "name": "Temperatura 3"
+      },
+      "temp4": {
+        "name": "Temperatura 4"
+      },
+      "temp_ps": {
+        "name": "Temperatura del dispositivo"
+      },
+      "upd_state": {
+        "name": "Estado de actualización",
+        "state": {
+          "0": "No hay actualización disponible",
+          "1": "Actualización disponible",
+          "2": "Descargando actualización",
+          "3": "Descargando actualización",
+          "4": "Descargando actualización",
+          "5": "Descargando actualización",
+          "6": "Descargando actualización",
+          "7": "Descargando actualización",
+          "8": "Descargando actualización",
+          "9": "Descargando actualización",
+          "10": "Actualización descargada",
+          "99": "Actualización fallida"
+        }
+      },
+      "uptime": {
+        "name": "Tiempo de funcionamiento"
+      },
+      "volt_l1": {
+        "name": "Tensión L1"
+      },
+      "volt_l2": {
+        "name": "Tensión L2"
+      },
+      "volt_l3": {
+        "name": "Tensión L3"
+      },
+      "volt_mains": {
+        "name": "Tensión de red"
+      },
+      "volt_mains_l1": {
+        "name": "Tensión de red L1"
+      },
+      "volt_mains_l2": {
+        "name": "Tensión de red L2"
+      },
+      "volt_mains_l3": {
+        "name": "Tensión de red L3"
+      },
+      "wifi_signal": {
+        "name": "Intensidad de señal Wi-Fi",
+        "state": {
+          "0": "Mala",
+          "1": "Mala",
+          "2": "Aceptable",
+          "3": "Buena",
+          "4": "Muy buena"
+        }
+      },
+      "wifi_signal_strength": {
+        "name": "Intensidad de señal Wi-Fi"
+      },
+      "power": {
+        "name": "Potencia de calefacción"
+      },
+      "power_solar_act": {
+        "name": "Potencia FV"
+      },
+      "power_grid_act": {
+        "name": "Potencia de red"
+      },
+      "volt_solar": {
+        "name": "Tensión FV"
+      },
+      "power_solar": {
+        "name": "Potencia FV"
+      },
+      "power_elwa2": {
+        "name": "Potencia de calefacción"
+      },
+      "upd_percentage": {
+        "name": "Progreso de actualización"
+      },
+      "upd_pct": {
+        "name": "Progreso de actualización"
+      },
+      "power_act": {
+        "name": "Potencia de calefacción"
+      },
+      "power_ac9": {
+        "name": "Potencia de calefacción"
+      },
+      "rel1_out": {
+        "name": "Estado de relés"
+      },
+      "load_state": {
+        "name": "Carga"
+      },
+      "load_nom": {
+        "name": "Potencia nominal de carga"
+      },
+      "pump_pwm": {
+        "name": "PWM de bomba"
+      },
+      "power_nominal": {
+        "name": "Potencia nominal"
+      },
+      "power_max": {
+        "name": "Potencia máxima"
+      },
+      "meter1_id": {
+        "name": "Contador 1 ID"
+      },
+      "meter2_id": {
+        "name": "Contador 2 ID"
+      },
+      "meter3_id": {
+        "name": "Contador 3 ID"
+      },
+      "meter4_id": {
+        "name": "Contador 4 ID"
+      },
+      "meter5_id": {
+        "name": "Contador 5 ID"
+      },
+      "meter6_id": {
+        "name": "Contador 6 ID"
+      },
+      "meter1_ip": {
+        "name": "Dirección IP contador 1"
+      },
+      "meter2_ip": {
+        "name": "Dirección IP contador 2"
+      },
+      "meter3_ip": {
+        "name": "Dirección IP contador 3"
+      },
+      "meter4_ip": {
+        "name": "Dirección IP contador 4"
+      },
+      "meter5_ip": {
+        "name": "Dirección IP contador 5"
+      },
+      "meter6_ip": {
+        "name": "Dirección IP contador 6"
+      },
+      "power_grid": {
+        "name": "Potencia de red"
+      },
+      "power_l1": {
+        "name": "Potencia L1"
+      },
+      "power_l2": {
+        "name": "Potencia L2"
+      },
+      "power_l3": {
+        "name": "Potencia L3"
+      },
+      "energy_supply_l1": {
+        "name": "Suministro de red L1"
+      },
+      "energy_supply_l2": {
+        "name": "Suministro de red L2"
+      },
+      "energy_supply_l3": {
+        "name": "Suministro de red L3"
+      },
+      "energy_feed_l1": {
+        "name": "Inyección L1"
+      },
+      "energy_feed_l2": {
+        "name": "Inyección L2"
+      },
+      "energy_feed_l3": {
+        "name": "Inyección L3"
+      },
+      "ssid": {
+        "name": "SSID Wi-Fi"
+      }
+    },
+    "button": {
+      "reboot_device": {
+        "name": "Reiniciar"
+      },
+      "factory_reset": {
+        "name": "Restablecimiento de fábrica"
+      }
+    },
+    "update": {
+      "firmware_update": {
+        "name": "Firmware"
+      }
+    }
+  }
+}

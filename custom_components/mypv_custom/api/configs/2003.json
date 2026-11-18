@@ -1,0 +1,203 @@
+{
+  "data": {
+    "curr_l2": {
+      "divider": 10,
+      "name": "Mains current L2",
+      "type": "number",
+      "unit": "A"
+    },
+    "curr_l3": {
+      "divider": 10,
+      "name": "Mains current L3",
+      "type": "number",
+      "unit": "A"
+    },
+    "curr_mains": {
+      "divider": 10,
+      "name": "Mains current L1",
+      "type": "number",
+      "unit": "A"
+    },
+    "power_ac9": {
+      "name": "Heating power",
+      "type": "number",
+      "unit": "W"
+    },
+    "volt_l2": {
+      "name": "Voltage L2",
+      "type": "number",
+      "unit": "V"
+    },
+    "volt_l3": {
+      "name": "Voltage L3",
+      "type": "number",
+      "unit": "V"
+    },
+    "volt_mains": {
+      "name": "Voltage L1",
+      "type": "number",
+      "unit": "V"
+    },
+    "rel1_out": {
+      "name": "Relays state",
+      "type": "string"
+    },
+    "load_state": {
+      "name": "Load",
+      "type": "string"
+    },
+    "load_nom": {
+      "name": "Load nominal power",
+      "type": "number",
+      "unit": "W"
+    },
+    "pump_pwm": {
+      "name": "Pump PWM",
+      "type": "number",
+      "unit": "%"
+    },
+    "power_nominal": {
+      "name": "Nominal power",
+      "type": "number",
+      "unit": "W"
+    },
+    "power_max": {
+      "name": "Maximum power",
+      "type": "number",
+      "unit": "W"
+    },
+    "meter1_id": {
+      "name": "Meter 1 ID",
+      "type": "string"
+    },
+    "meter2_id": {
+      "name": "Meter 2 ID",
+      "type": "string"
+    },
+    "meter3_id": {
+      "name": "Meter 3 ID",
+      "type": "string"
+    },
+    "meter4_id": {
+      "name": "Meter 4 ID",
+      "type": "string"
+    },
+    "meter5_id": {
+      "name": "Meter 5 ID",
+      "type": "string"
+    },
+    "meter6_id": {
+      "name": "Meter 6 ID",
+      "type": "string"
+    },
+    "meter1_ip": {
+      "name": "Meter 1 IP address",
+      "type": "string"
+    },
+    "meter2_ip": {
+      "name": "Meter 2 IP address",
+      "type": "string"
+    },
+    "meter3_ip": {
+      "name": "Meter 3 IP address",
+      "type": "string"
+    },
+    "meter4_ip": {
+      "name": "Meter 4 IP address",
+      "type": "string"
+    },
+    "meter5_ip": {
+      "name": "Meter 5 IP address",
+      "type": "string"
+    },
+    "meter6_ip": {
+      "name": "Meter 6 IP address",
+      "type": "string"
+    }
+  },
+  "setup": {
+    "bstmode": {
+      "name": "Boost mode",
+      "options": {
+        "0": "Off",
+        "1": "On",
+        "3": "Relay"
+      },
+      "type": "enumeration"
+    },
+    "bstoutput": {
+      "advanced": true,
+      "name": "Boost output",
+      "options": {
+        "7": "1, 2 and 3",
+        "6": "2 and 3",
+        "4": "3"
+      },
+      "type": "enumeration"
+    },
+    "legoutput": {
+      "advanced": true,
+      "name": "Legionella output",
+      "options": {
+        "7": "1, 2 and 3",
+        "6": "1, 2 and 3",
+        "4": "3"
+      },
+      "type": "enumeration"
+    },
+    "mode9s": {
+      "advanced": true,
+      "name": "Load mode",
+      "options": {
+        "1": "Out 1-2-3",
+        "2": "Out 3-2-1"
+      },
+      "type": "enumeration"
+    },
+    "mm1relaux": {
+      "advanced": true,
+      "name": "Activate AUX relay when heating",
+      "type": "boolean"
+    },
+    "mm1relauxpmin": {
+      "advanced": true,
+      "max": 9000,
+      "min": 1,
+      "name": "Minimum power for AUX relay",
+      "type": "number",
+      "unit": "W"
+    },
+    "mm1relauxtmin": {
+      "advanced": true,
+      "max": 65535,
+      "min": 0,
+      "name": "Minimum runtime for AUX relay",
+      "type": "number",
+      "unit": "s"
+    },
+    "ptarget": {
+      "advanced": true,
+      "max": 9999,
+      "min": -9999,
+      "name": "Target power",
+      "type": "number",
+      "unit": "W"
+    },
+    "blockon": {
+      "advanced": true,
+      "max": 23,
+      "min": 0,
+      "name": "Block on hour",
+      "type": "number",
+      "unit": "hh"
+    },
+    "blockof": {
+      "advanced": true,
+      "max": 24,
+      "min": 0,
+      "name": "Block off hour",
+      "type": "number",
+      "unit": "hh"
+    }
+  }
+}

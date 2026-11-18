@@ -1,0 +1,551 @@
+{
+  "title": "myPV (Custom)",
+  "config": {
+    "step": {
+      "user": {
+        "title": "my-PV device",
+        "description": "Enter the IP address or hostname of your my-PV device. The device is used entirely locally.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "The IP address or hostname of your my-PV device."
+        }
+      },
+      "auth": {
+        "title": "{name} password",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "The password of your my-PV device. If no custom password is set use the device key, found in the info menu of the device (or on the label of the HEA•THOR IoT)."
+        }
+      },
+      "discovery_confirm": {
+        "title": "{name}",
+        "description": "Do you want to set up {name}?"
+      },
+      "discovery_auth": {
+        "title": "{name}",
+        "description": "Do you want to set up {name}?",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "The password of your my-PV device. If no custom password is set use the device key, found in the info menu of the device (or on the label of the HEA•THOR IoT)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "{name} password",
+        "description": "The password of your my-PV device changed. Enter the new password.",
+        "data": {
+          "password": "Password"
+        },
+        "data_description": {
+          "password": "The password of your my-PV device. If no custom password is set use the device key, found in the info menu of the device (or on the label of the HEA•THOR IoT)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect",
+      "invalid_password": "Invalid password"
+    },
+    "abort": {
+      "already_configured": "This device is already configured",
+      "cannot_connect": "Failed to connect",
+      "unsupported_device": "This my-PV device is not supported",
+      "reauth_successful": "Reauthentication was successful"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "my-PV options",
+        "data": {
+          "advanced": "Show advanced settings"
+        },
+        "data_description": {
+          "advanced": "Expose advanced settings such as network configuration, boost schedules and diagnostics."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "auth_error": {
+      "message": "Authentication failed, please reauthenticate."
+    },
+    "cannot_connect": {
+      "message": "Failed to connect to the device."
+    },
+    "device_unavailable": {
+      "message": "Device on {uri} is unavailable"
+    },
+    "fetch_failed": {
+      "message": "Failed to fetch data from the device."
+    },
+    "rate_limiting": {
+      "message": "The device is receiving too many requests."
+    },
+    "unknown_error": {
+      "message": "The device could not complete the requested action."
+    },
+    "unsupported_device": {
+      "message": "This my-PV device is not supported."
+    }
+  },
+  "entity": {
+    "switch": {
+      "bstmode": {
+        "name": "Boost mode"
+      },
+      "bstwd1": {
+        "name": "Boost Monday"
+      },
+      "bstwd2": {
+        "name": "Boost Tuesday"
+      },
+      "bstwd3": {
+        "name": "Boost Wednesday"
+      },
+      "bstwd4": {
+        "name": "Boost Thursday"
+      },
+      "bstwd5": {
+        "name": "Boost Friday"
+      },
+      "bstwd6": {
+        "name": "Boost Saturday"
+      },
+      "bstwd7": {
+        "name": "Boost Sunday"
+      },
+      "cloudmode": {
+        "name": "Cloud mode"
+      },
+      "debugmode": {
+        "name": "Debug mode"
+      },
+      "devmode": {
+        "name": "Device mode"
+      },
+      "dhcp": {
+        "name": "DHCP mode"
+      },
+      "legmode": {
+        "name": "Legionella mode"
+      },
+      "boostactive": {
+        "name": "Boost active"
+      },
+      "bststrt": {
+        "name": "Manual boost"
+      },
+      "mm1relaux": {
+        "name": "AUX relay when heating"
+      }
+    },
+    "select": {
+      "bstmode": {
+        "name": "Boost mode",
+        "state": {
+          "0": "Off",
+          "1": "On",
+          "3": "Relay",
+          "4": "SELV relay",
+          "5": "AUX relay"
+        }
+      },
+      "mainmode": {
+        "name": "Main mode",
+        "state": {
+          "1": "Hot water 3.5 kW",
+          "3": "Hot water 3.5 + 3 kW"
+        }
+      },
+      "compmode": {
+        "name": "Compatibility mode",
+        "state": {
+          "0": "AC ELWA 2 3.5 kW",
+          "1": "AC ELWA-E emulation 3.5 kW",
+          "2": "AC ELWA-E emulation 3 kW",
+          "3": "AC ELWA 2 3 kW"
+        }
+      },
+      "bstoutput": {
+        "name": "Boost output",
+        "state": {
+          "7": "1, 2 and 3",
+          "6": "2 and 3",
+          "4": "3"
+        }
+      },
+      "legoutput": {
+        "name": "Legionella output",
+        "state": {
+          "7": "1, 2 and 3",
+          "6": "1, 2 and 3",
+          "4": "3"
+        }
+      },
+      "mode9s": {
+        "name": "Load mode",
+        "state": {
+          "1": "Out 1-2-3",
+          "2": "Out 3-2-1"
+        }
+      }
+    },
+    "number": {
+      "bsttof1": {
+        "name": "Boost switch-off time 1"
+      },
+      "bsttof2": {
+        "name": "Boost switch-off time 2"
+      },
+      "bstton1": {
+        "name": "Boost switch-on time 1"
+      },
+      "bstton2": {
+        "name": "Boost switch-on time 2"
+      },
+      "legint": {
+        "name": "Legionella interval"
+      },
+      "legtemp": {
+        "name": "Legionella temperature"
+      },
+      "legton": {
+        "name": "Legionella start hour"
+      },
+      "maxpwr": {
+        "name": "Maximum power"
+      },
+      "ww1boost": {
+        "name": "Boost target temperature"
+      },
+      "ww1target": {
+        "name": "Target temperature"
+      },
+      "ww_boost_h": {
+        "name": "Minimum hysteresis"
+      },
+      "ww_targ_h": {
+        "name": "Maximum hysteresis"
+      },
+      "rh1_target": {
+        "name": "Space heating 1 target temperature"
+      },
+      "rh1_daybst": {
+        "name": "Space heating 1 day boost"
+      },
+      "rh1_nigbst": {
+        "name": "Space heating 1 night boost"
+      },
+      "rh2_target": {
+        "name": "Space heating 2 target temperature"
+      },
+      "rh2_daybst": {
+        "name": "Space heating 2 day boost"
+      },
+      "rh2_nigbst": {
+        "name": "Space heating 2 night boost"
+      },
+      "rh3_target": {
+        "name": "Space heating 3 target temperature"
+      },
+      "rh3_daybst": {
+        "name": "Space heating 3 day boost"
+      },
+      "rh3_nigbst": {
+        "name": "Space heating 3 night boost"
+      },
+      "mm1relauxpmin": {
+        "name": "AUX relay minimum power"
+      },
+      "mm1relauxtmin": {
+        "name": "AUX relay minimum runtime"
+      },
+      "ptarget": {
+        "name": "Target power"
+      },
+      "blockon": {
+        "name": "Block on hour"
+      },
+      "blockof": {
+        "name": "Block off hour"
+      },
+      "ct": {
+        "name": "CT clamp ratio"
+      }
+    },
+    "sensor": {
+      "cloudserver": {
+        "name": "Cloud server number"
+      },
+      "macadr": {
+        "name": "MAC address"
+      },
+      "serialno": {
+        "name": "Serial number"
+      },
+      "coversion": {
+        "name": "Co-controller version"
+      },
+      "ctrlstate": {
+        "name": "Status control"
+      },
+      "cur_eth_mode": {
+        "name": "Network mode",
+        "state": {
+          "0": "LAN",
+          "1": "Wi-Fi",
+          "2": "Access point"
+        }
+      },
+      "curr_l1": {
+        "name": "Current L1"
+      },
+      "curr_l2": {
+        "name": "Current L2"
+      },
+      "curr_l3": {
+        "name": "Current L3"
+      },
+      "curr_mains": {
+        "name": "Mains current"
+      },
+      "device": {
+        "name": "Device type"
+      },
+      "freq": {
+        "name": "Mains frequency"
+      },
+      "fwversion": {
+        "name": "Firmware version"
+      },
+      "fwversionlatest": {
+        "name": "Latest firmware"
+      },
+      "psversion": {
+        "name": "Power section version"
+      },
+      "screen_mode_flag": {
+        "name": "Device status",
+        "state": {
+          "0": "Standby",
+          "1": "Heat",
+          "2": "Boost",
+          "3": "Heating finished",
+          "4": "No connection / Disabled",
+          "5": "Error",
+          "6": "Block active"
+        }
+      },
+      "soc": {
+        "name": "Boiler state of charge"
+      },
+      "surplus": {
+        "name": "Grid power"
+      },
+      "temp1": {
+        "name": "Temperature 1"
+      },
+      "temp2": {
+        "name": "Temperature 2"
+      },
+      "temp3": {
+        "name": "Temperature 3"
+      },
+      "temp4": {
+        "name": "Temperature 4"
+      },
+      "temp_ps": {
+        "name": "Device temperature"
+      },
+      "upd_state": {
+        "name": "Update status",
+        "state": {
+          "0": "No update available",
+          "1": "Update available",
+          "2": "Downloading update",
+          "3": "Downloading update",
+          "4": "Downloading update",
+          "5": "Downloading update",
+          "6": "Downloading update",
+          "7": "Downloading update",
+          "8": "Downloading update",
+          "9": "Downloading update",
+          "10": "Update downloaded",
+          "99": "Update failed"
+        }
+      },
+      "uptime": {
+        "name": "Uptime"
+      },
+      "volt_l1": {
+        "name": "Voltage L1"
+      },
+      "volt_l2": {
+        "name": "Voltage L2"
+      },
+      "volt_l3": {
+        "name": "Voltage L3"
+      },
+      "volt_mains": {
+        "name": "Mains voltage"
+      },
+      "volt_mains_l1": {
+        "name": "Mains voltage L1"
+      },
+      "volt_mains_l2": {
+        "name": "Mains voltage L2"
+      },
+      "volt_mains_l3": {
+        "name": "Mains voltage L3"
+      },
+      "wifi_signal": {
+        "name": "Wi-Fi signal strength",
+        "state": {
+          "0": "Bad",
+          "1": "Bad",
+          "2": "Ok",
+          "3": "Good",
+          "4": "Strong"
+        }
+      },
+      "wifi_signal_strength": {
+        "name": "Wi-Fi signal strength"
+      },
+      "power": {
+        "name": "Heating power"
+      },
+      "power_solar_act": {
+        "name": "PV power"
+      },
+      "power_grid_act": {
+        "name": "Grid power"
+      },
+      "volt_solar": {
+        "name": "PV voltage"
+      },
+      "power_solar": {
+        "name": "PV power"
+      },
+      "power_elwa2": {
+        "name": "Heating power"
+      },
+      "upd_percentage": {
+        "name": "Update percentage"
+      },
+      "upd_pct": {
+        "name": "Update percentage"
+      },
+      "power_act": {
+        "name": "Heating power"
+      },
+      "power_ac9": {
+        "name": "Heating power"
+      },
+      "rel1_out": {
+        "name": "Relay states"
+      },
+      "load_state": {
+        "name": "Load"
+      },
+      "load_nom": {
+        "name": "Load nominal power"
+      },
+      "pump_pwm": {
+        "name": "Pump PWM"
+      },
+      "power_nominal": {
+        "name": "Nominal power"
+      },
+      "power_max": {
+        "name": "Maximum power"
+      },
+      "meter1_id": {
+        "name": "Meter 1 ID"
+      },
+      "meter2_id": {
+        "name": "Meter 2 ID"
+      },
+      "meter3_id": {
+        "name": "Meter 3 ID"
+      },
+      "meter4_id": {
+        "name": "Meter 4 ID"
+      },
+      "meter5_id": {
+        "name": "Meter 5 ID"
+      },
+      "meter6_id": {
+        "name": "Meter 6 ID"
+      },
+      "meter1_ip": {
+        "name": "Meter 1 IP address"
+      },
+      "meter2_ip": {
+        "name": "Meter 2 IP address"
+      },
+      "meter3_ip": {
+        "name": "Meter 3 IP address"
+      },
+      "meter4_ip": {
+        "name": "Meter 4 IP address"
+      },
+      "meter5_ip": {
+        "name": "Meter 5 IP address"
+      },
+      "meter6_ip": {
+        "name": "Meter 6 IP address"
+      },
+      "power_grid": {
+        "name": "Grid power"
+      },
+      "power_l1": {
+        "name": "Power L1"
+      },
+      "power_l2": {
+        "name": "Power L2"
+      },
+      "power_l3": {
+        "name": "Power L3"
+      },
+      "energy_supply_l1": {
+        "name": "Grid supply L1"
+      },
+      "energy_supply_l2": {
+        "name": "Grid supply L2"
+      },
+      "energy_supply_l3": {
+        "name": "Grid supply L3"
+      },
+      "energy_feed_l1": {
+        "name": "Feed-in L1"
+      },
+      "energy_feed_l2": {
+        "name": "Feed-in L2"
+      },
+      "energy_feed_l3": {
+        "name": "Feed-in L3"
+      },
+      "ssid": {
+        "name": "Wi-Fi SSID"
+      }
+    },
+    "button": {
+      "reboot_device": {
+        "name": "Reboot"
+      },
+      "factory_reset": {
+        "name": "Factory reset"
+      }
+    },
+    "update": {
+      "firmware_update": {
+        "name": "Firmware"
+      }
+    }
+  }
+}

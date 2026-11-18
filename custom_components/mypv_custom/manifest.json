@@ -1,0 +1,31 @@
+{
+  "domain": "mypv_custom",
+  "name": "myPV (Custom)",
+  "codeowners": [
+    "@WildesBenny",
+    "@cyd1um"
+  ],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/WildesBenny/mypv-home-assistant-integration",
+  "integration_type": "device",
+  "iot_class": "local_polling",
+  "issue_tracker": "https://github.com/WildesBenny/mypv-home-assistant-integration/issues",
+  "loggers": [
+    "custom_components.mypv_custom"
+  ],
+  "quality_scale": "silver",
+  "requirements": [],
+  "version": "1.0.0",
+  "zeroconf": [
+    "_mypv._tcp.local."
+  ],
+  "dhcp": [
+    {
+      "registered_devices": true
+    },
+    {
+      "macaddress": "986D35C*"
+    }
+  ]
+}

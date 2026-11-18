@@ -1,0 +1,551 @@
+{
+  "title": "myPV (Aangepast)",
+  "config": {
+    "step": {
+      "user": {
+        "title": "my-PV apparaat",
+        "description": "Voer het IP-adres of de hostnaam van je my-PV apparaat in. Het apparaat wordt volledig lokaal gebruikt.",
+        "data": {
+          "host": "Host"
+        },
+        "data_description": {
+          "host": "Het IP-adres of de hostnaam van je my-PV apparaat."
+        }
+      },
+      "auth": {
+        "title": "{name} wachtwoord",
+        "data": {
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "password": "Het wachtwoord van je my-PV apparaat. Als er geen eigen wachtwoord is ingesteld, gebruik dan de device key uit het infomenu van het apparaat (of op het label van de HEA•THOR IoT)."
+        }
+      },
+      "discovery_confirm": {
+        "title": "{name}",
+        "description": "Wil je {name} instellen?"
+      },
+      "discovery_auth": {
+        "title": "{name}",
+        "description": "Wil je {name} instellen?",
+        "data": {
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "password": "Het wachtwoord van je my-PV apparaat. Als er geen eigen wachtwoord is ingesteld, gebruik dan de device key uit het infomenu van het apparaat (of op het label van de HEA•THOR IoT)."
+        }
+      },
+      "reauth_confirm": {
+        "title": "{name} wachtwoord",
+        "description": "Het wachtwoord van je my-PV apparaat is gewijzigd. Voer het nieuwe wachtwoord in.",
+        "data": {
+          "password": "Wachtwoord"
+        },
+        "data_description": {
+          "password": "Het wachtwoord van je my-PV apparaat. Als er geen eigen wachtwoord is ingesteld, gebruik dan de device key uit het infomenu van het apparaat (of op het label van de HEA•THOR IoT)."
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbinding mislukt",
+      "invalid_password": "Ongeldig wachtwoord"
+    },
+    "abort": {
+      "already_configured": "Dit apparaat is al geconfigureerd",
+      "cannot_connect": "Verbinding mislukt",
+      "unsupported_device": "Dit my-PV apparaat wordt niet ondersteund",
+      "reauth_successful": "Herauthenticatie is geslaagd"
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "my-PV opties",
+        "data": {
+          "advanced": "Geavanceerde instellingen tonen"
+        },
+        "data_description": {
+          "advanced": "Geavanceerde instellingen tonen zoals netwerkconfiguratie, boost-schema's en diagnostiek."
+        }
+      }
+    }
+  },
+  "exceptions": {
+    "auth_error": {
+      "message": "Authenticatie mislukt, authenticeer opnieuw."
+    },
+    "cannot_connect": {
+      "message": "Kan geen verbinding maken met het apparaat."
+    },
+    "device_unavailable": {
+      "message": "Apparaat op {uri} is niet beschikbaar"
+    },
+    "fetch_failed": {
+      "message": "Kan geen gegevens van het apparaat ophalen."
+    },
+    "rate_limiting": {
+      "message": "Het apparaat ontvangt te veel verzoeken."
+    },
+    "unknown_error": {
+      "message": "Het apparaat kon de gevraagde actie niet uitvoeren."
+    },
+    "unsupported_device": {
+      "message": "Dit my-PV apparaat wordt niet ondersteund."
+    }
+  },
+  "entity": {
+    "switch": {
+      "bstmode": {
+        "name": "Boostmodus"
+      },
+      "bstwd1": {
+        "name": "Boost maandag"
+      },
+      "bstwd2": {
+        "name": "Boost dinsdag"
+      },
+      "bstwd3": {
+        "name": "Boost woensdag"
+      },
+      "bstwd4": {
+        "name": "Boost donderdag"
+      },
+      "bstwd5": {
+        "name": "Boost vrijdag"
+      },
+      "bstwd6": {
+        "name": "Boost zaterdag"
+      },
+      "bstwd7": {
+        "name": "Boost zondag"
+      },
+      "cloudmode": {
+        "name": "Cloudmodus"
+      },
+      "debugmode": {
+        "name": "Debugmodus"
+      },
+      "devmode": {
+        "name": "Apparaatmodus"
+      },
+      "dhcp": {
+        "name": "DHCP-modus"
+      },
+      "legmode": {
+        "name": "Legionellamodus"
+      },
+      "boostactive": {
+        "name": "Boost actief"
+      },
+      "bststrt": {
+        "name": "Handmatige boost"
+      },
+      "mm1relaux": {
+        "name": "AUX-relais bij verwarmen"
+      }
+    },
+    "select": {
+      "bstmode": {
+        "name": "Boostmodus",
+        "state": {
+          "0": "Uit",
+          "1": "Aan",
+          "3": "Relais",
+          "4": "SELV-relais",
+          "5": "AUX-relais"
+        }
+      },
+      "mainmode": {
+        "name": "Hoofdmodus",
+        "state": {
+          "1": "Warm water 3,5 kW",
+          "3": "Warm water 3,5 + 3 kW"
+        }
+      },
+      "compmode": {
+        "name": "Compatibiliteitsmodus",
+        "state": {
+          "0": "AC ELWA 2 3,5 kW",
+          "1": "AC ELWA-E-emulatie 3,5 kW",
+          "2": "AC ELWA-E-emulatie 3 kW",
+          "3": "AC ELWA 2 3 kW"
+        }
+      },
+      "bstoutput": {
+        "name": "Boostuitgang",
+        "state": {
+          "7": "1, 2 en 3",
+          "6": "2 en 3",
+          "4": "3"
+        }
+      },
+      "legoutput": {
+        "name": "Legionella-uitgang",
+        "state": {
+          "7": "1, 2 en 3",
+          "6": "1, 2 en 3",
+          "4": "3"
+        }
+      },
+      "mode9s": {
+        "name": "Belastingsmodus",
+        "state": {
+          "1": "Uitgang 1-2-3",
+          "2": "Uitgang 3-2-1"
+        }
+      }
+    },
+    "number": {
+      "bsttof1": {
+        "name": "Boost uitschakeltijd 1"
+      },
+      "bsttof2": {
+        "name": "Boost uitschakeltijd 2"
+      },
+      "bstton1": {
+        "name": "Boost inschakeltijd 1"
+      },
+      "bstton2": {
+        "name": "Boost inschakeltijd 2"
+      },
+      "legint": {
+        "name": "Legionella-interval"
+      },
+      "legtemp": {
+        "name": "Legionellatemperatuur"
+      },
+      "legton": {
+        "name": "Legionella-startuur"
+      },
+      "maxpwr": {
+        "name": "Maximaal vermogen"
+      },
+      "ww1boost": {
+        "name": "Boost-doeltemperatuur"
+      },
+      "ww1target": {
+        "name": "Doeltemperatuur"
+      },
+      "ww_boost_h": {
+        "name": "Minimale hysterese"
+      },
+      "ww_targ_h": {
+        "name": "Maximale hysterese"
+      },
+      "rh1_target": {
+        "name": "Ruimteverwarming 1 doeltemperatuur"
+      },
+      "rh1_daybst": {
+        "name": "Ruimteverwarming 1 dagboost"
+      },
+      "rh1_nigbst": {
+        "name": "Ruimteverwarming 1 nachtboost"
+      },
+      "rh2_target": {
+        "name": "Ruimteverwarming 2 doeltemperatuur"
+      },
+      "rh2_daybst": {
+        "name": "Ruimteverwarming 2 dagboost"
+      },
+      "rh2_nigbst": {
+        "name": "Ruimteverwarming 2 nachtboost"
+      },
+      "rh3_target": {
+        "name": "Ruimteverwarming 3 doeltemperatuur"
+      },
+      "rh3_daybst": {
+        "name": "Ruimteverwarming 3 dagboost"
+      },
+      "rh3_nigbst": {
+        "name": "Ruimteverwarming 3 nachtboost"
+      },
+      "mm1relauxpmin": {
+        "name": "AUX-relais minimumvermogen"
+      },
+      "mm1relauxtmin": {
+        "name": "AUX-relais minimumlooptijd"
+      },
+      "ptarget": {
+        "name": "Doelvermogen"
+      },
+      "blockon": {
+        "name": "Blokkering startuur"
+      },
+      "blockof": {
+        "name": "Blokkering einduur"
+      },
+      "ct": {
+        "name": "CT-stroomtangverhouding"
+      }
+    },
+    "sensor": {
+      "cloudserver": {
+        "name": "Cloudservernummer"
+      },
+      "macadr": {
+        "name": "MAC-adres"
+      },
+      "serialno": {
+        "name": "Serienummer"
+      },
+      "coversion": {
+        "name": "Co-controllerversie"
+      },
+      "ctrlstate": {
+        "name": "Status regeling"
+      },
+      "cur_eth_mode": {
+        "name": "Netwerkmodus",
+        "state": {
+          "0": "LAN",
+          "1": "Wi-Fi",
+          "2": "Access point"
+        }
+      },
+      "curr_l1": {
+        "name": "Stroom L1"
+      },
+      "curr_l2": {
+        "name": "Stroom L2"
+      },
+      "curr_l3": {
+        "name": "Stroom L3"
+      },
+      "curr_mains": {
+        "name": "Netstroom"
+      },
+      "device": {
+        "name": "Apparaattype"
+      },
+      "freq": {
+        "name": "Netfrequentie"
+      },
+      "fwversion": {
+        "name": "Firmwareversie"
+      },
+      "fwversionlatest": {
+        "name": "Nieuwste firmware"
+      },
+      "psversion": {
+        "name": "Vermogensdeel-versie"
+      },
+      "screen_mode_flag": {
+        "name": "Apparaatstatus",
+        "state": {
+          "0": "Stand-by",
+          "1": "Verwarmen",
+          "2": "Boost",
+          "3": "Verwarming voltooid",
+          "4": "Geen verbinding / Uitgeschakeld",
+          "5": "Fout",
+          "6": "Blokkering actief"
+        }
+      },
+      "soc": {
+        "name": "Laadtoestand van de boiler"
+      },
+      "surplus": {
+        "name": "Netvermogen"
+      },
+      "temp1": {
+        "name": "Temperatuur 1"
+      },
+      "temp2": {
+        "name": "Temperatuur 2"
+      },
+      "temp3": {
+        "name": "Temperatuur 3"
+      },
+      "temp4": {
+        "name": "Temperatuur 4"
+      },
+      "temp_ps": {
+        "name": "Apparaattemperatuur"
+      },
+      "upd_state": {
+        "name": "Updatestatus",
+        "state": {
+          "0": "Geen update beschikbaar",
+          "1": "Update beschikbaar",
+          "2": "Update wordt gedownload",
+          "3": "Update wordt gedownload",
+          "4": "Update wordt gedownload",
+          "5": "Update wordt gedownload",
+          "6": "Update wordt gedownload",
+          "7": "Update wordt gedownload",
+          "8": "Update wordt gedownload",
+          "9": "Update wordt gedownload",
+          "10": "Update gedownload",
+          "99": "Update mislukt"
+        }
+      },
+      "uptime": {
+        "name": "Looptijd"
+      },
+      "volt_l1": {
+        "name": "Spanning L1"
+      },
+      "volt_l2": {
+        "name": "Spanning L2"
+      },
+      "volt_l3": {
+        "name": "Spanning L3"
+      },
+      "volt_mains": {
+        "name": "Netspanning"
+      },
+      "volt_mains_l1": {
+        "name": "Netspanning L1"
+      },
+      "volt_mains_l2": {
+        "name": "Netspanning L2"
+      },
+      "volt_mains_l3": {
+        "name": "Netspanning L3"
+      },
+      "wifi_signal": {
+        "name": "Wi-Fi-signaalsterkte",
+        "state": {
+          "0": "Slecht",
+          "1": "Slecht",
+          "2": "Redelijk",
+          "3": "Goed",
+          "4": "Zeer goed"
+        }
+      },
+      "wifi_signal_strength": {
+        "name": "Wi-Fi-signaalsterkte"
+      },
+      "power": {
+        "name": "Verwarmingsvermogen"
+      },
+      "power_solar_act": {
+        "name": "PV-vermogen"
+      },
+      "power_grid_act": {
+        "name": "Netvermogen"
+      },
+      "volt_solar": {
+        "name": "PV-spanning"
+      },
+      "power_solar": {
+        "name": "PV-vermogen"
+      },
+      "power_elwa2": {
+        "name": "Verwarmingsvermogen"
+      },
+      "upd_percentage": {
+        "name": "Updatevoortgang"
+      },
+      "upd_pct": {
+        "name": "Updatevoortgang"
+      },
+      "power_act": {
+        "name": "Verwarmingsvermogen"
+      },
+      "power_ac9": {
+        "name": "Verwarmingsvermogen"
+      },
+      "rel1_out": {
+        "name": "Relaisstatus"
+      },
+      "load_state": {
+        "name": "Belasting"
+      },
+      "load_nom": {
+        "name": "Nominaal lastvermogen"
+      },
+      "pump_pwm": {
+        "name": "Pomp PWM"
+      },
+      "power_nominal": {
+        "name": "Nominaal vermogen"
+      },
+      "power_max": {
+        "name": "Maximaal vermogen"
+      },
+      "meter1_id": {
+        "name": "Meter 1 ID"
+      },
+      "meter2_id": {
+        "name": "Meter 2 ID"
+      },
+      "meter3_id": {
+        "name": "Meter 3 ID"
+      },
+      "meter4_id": {
+        "name": "Meter 4 ID"
+      },
+      "meter5_id": {
+        "name": "Meter 5 ID"
+      },
+      "meter6_id": {
+        "name": "Meter 6 ID"
+      },
+      "meter1_ip": {
+        "name": "Meter 1 IP-adres"
+      },
+      "meter2_ip": {
+        "name": "Meter 2 IP-adres"
+      },
+      "meter3_ip": {
+        "name": "Meter 3 IP-adres"
+      },
+      "meter4_ip": {
+        "name": "Meter 4 IP-adres"
+      },
+      "meter5_ip": {
+        "name": "Meter 5 IP-adres"
+      },
+      "meter6_ip": {
+        "name": "Meter 6 IP-adres"
+      },
+      "power_grid": {
+        "name": "Netvermogen"
+      },
+      "power_l1": {
+        "name": "Vermogen L1"
+      },
+      "power_l2": {
+        "name": "Vermogen L2"
+      },
+      "power_l3": {
+        "name": "Vermogen L3"
+      },
+      "energy_supply_l1": {
+        "name": "Netafname L1"
+      },
+      "energy_supply_l2": {
+        "name": "Netafname L2"
+      },
+      "energy_supply_l3": {
+        "name": "Netafname L3"
+      },
+      "energy_feed_l1": {
+        "name": "Teruglevering L1"
+      },
+      "energy_feed_l2": {
+        "name": "Teruglevering L2"
+      },
+      "energy_feed_l3": {
+        "name": "Teruglevering L3"
+      },
+      "ssid": {
+        "name": "Wi-Fi-SSID"
+      }
+    },
+    "button": {
+      "reboot_device": {
+        "name": "Herstarten"
+      },
+      "factory_reset": {
+        "name": "Fabrieksinstellingen"
+      }
+    },
+    "update": {
+      "firmware_update": {
+        "name": "Firmware"
+      }
+    }
+  }
+}
